@@ -1,0 +1,19 @@
+<nz-input-group nzAddOnBefore="input1">
+  <input (ngModelChange)="value1Changed($event)" [ngModel]="value1" nz-input/>
+</nz-input-group>
+
+<nz-alert style="margin-top: 10px;margin-bottom: 5px"
+          *ngIf="fromControl.hasError(MyDataError.value1Error)"
+          nzType="error"
+          [nzDescription]="fromControl.errors?.[MyDataError.value1Error]"
+></nz-alert>
+
+<nz-input-group style="margin-top: 15px" nzAddOnBefore="input2">
+  <input (ngModelChange)="value2Changed($event)" [ngModel]="value2" nz-input/>
+</nz-input-group>
+
+<nz-alert style="margin-top: 10px;margin-bottom: 5px"
+          *ngIf="fromControl.hasError(MyDataError.value2Error)"
+          nzType="error"
+          [nzDescription]="fromControl.errors?.[MyDataError.value2Error]"
+></nz-alert>
